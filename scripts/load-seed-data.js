@@ -8,9 +8,9 @@ const artists = [
 ];
 
 const albums = [
-  { album: 'dangerous woman', artist_id: 1 },
-  { album: 'sweetener', artist_id: 1 },
-  { album: 'drones', artist_id: 2 }
+  { album: 'dangerous woman', rating: 5, artist_id: 1 },
+  { album: 'sweetener', rating: 5, artist_id: 1 },
+  { album: 'drones', rating: 5, artist_id: 2 }
 ];
 
 
@@ -35,9 +35,9 @@ client.query(`
     return Promise.all(
       albums.map(album =>{
         return client.query(`
-                INSERT INTO album(album, artist_id)
-                VALUES ($1, $2)
-              `, [album.album, album.artist_id]);
+                INSERT INTO album(album, rating, artist_id)
+                VALUES ($1, $2, $3)
+              `, [album.album, album.rating, album.artist_id]);
       })
     );
   })
