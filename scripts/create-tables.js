@@ -19,7 +19,7 @@ client.query(`
     id SERIAL PRIMARY KEY,
     album VARCHAR(256) NOT NULL,
     year INTEGER,
-    artist_id INTEGER REFERENCES artist(id)
+    artist_id INTEGER REFERENCES artist(id) on DELETE CASCADE
   )`)
   .then(
     () => console.log('create tables complete'),
