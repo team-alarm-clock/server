@@ -2,9 +2,9 @@ require('dotenv').config();
 const client = require('../lib/db-client');
 
 client.query(`
-  DROP TABLE IF EXISTS profile;
-  DROP TABLE IF EXISTS artist;
   DROP TABLE IF EXISTS album;
+  DROP TABLE IF EXISTS artist;
+  DROP TABLE IF EXISTS profile;
 `)
   .then(
     () => console.log('drop tables complete'),
