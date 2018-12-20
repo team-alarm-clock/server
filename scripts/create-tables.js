@@ -18,6 +18,7 @@ client.query(`
   CREATE TABLE IF NOT EXISTS album (
     id SERIAL PRIMARY KEY,
     album VARCHAR(256) NOT NULL,
+    rating INTEGER,
     artist_id INTEGER REFERENCES artist(id)
   )`)
   .then(
