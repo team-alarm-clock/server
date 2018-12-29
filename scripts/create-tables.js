@@ -10,11 +10,13 @@ client.query(`
     last VARCHAR(256) NOT NULL, 
     email VARCHAR(256) NOT NULL
   );
+
   CREATE TABLE IF NOT EXISTS artist (
     id SERIAL PRIMARY KEY,
     artist VARCHAR(256) NOT NULL,
     profile_id INTEGER REFERENCES profile(id)
   );
+  
   CREATE TABLE IF NOT EXISTS album (
     id SERIAL PRIMARY KEY,
     album VARCHAR(256) NOT NULL,
